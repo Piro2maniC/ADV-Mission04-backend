@@ -23,6 +23,10 @@ app.use("/api", userRouter);
 app.use("/api/gemini", geminiRouter);
 app.use('/api/insurance', insuranceRoutes);
 
+// default route handler
+app.get("/", (req, res) => {
+  res.send("hello world");
+});
 
 // Set up port
 const PORT = process.env.SERVER_PORT || 4000;
